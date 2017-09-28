@@ -1,18 +1,12 @@
 defmodule Calcbox do
-  @moduledoc """
-  Documentation for Calcbox.
-  """
+  @behaviour Calcbox.Calculator
+  @calculator Application.get_env(:calcbox, :calculator, Calcbox.MagicCalculator)
 
-  @doc """
-  Hello world.
+  def add(a, b) do
+    @calculator.add(a, b)
+  end
 
-  ## Examples
-
-      iex> Calcbox.hello
-      :world
-
-  """
-  def hello do
-    :world
+  def mult(a, b) do
+    @calculator.mult(a, b)
   end
 end

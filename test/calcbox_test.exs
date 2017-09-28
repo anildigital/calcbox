@@ -3,10 +3,6 @@ defmodule CalcboxTest do
   doctest Calcbox
   import Mox
 
-  test "greets the world" do
-    assert Calcbox.hello() == :world
-  end
-
   test "invokes add and mult" do
     Calcbox.CalcMock
     |> expect(:add, fn x, y -> x + y end)
